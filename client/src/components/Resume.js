@@ -1,0 +1,117 @@
+import React,{Component} from "react"
+import Personal from "./Personal";
+import Education from "./Education";
+
+class Resume extends Component{
+
+//   const [step, setStep] = useState(0);
+
+//   const [data, setData] = useState({step:1,
+//                               firstname:'',
+//                               lastname:'',
+//                               email:'',
+//                               phone:'',
+//                               university:'',
+//                               degree:'',
+//                               program:''});
+
+  state={step:1,
+        visited_page:1,
+        firstname:'',
+        lastname:'',
+        email:'',
+        phone:'',
+        city:'',
+        state1:'',
+        country:'',
+        university:'',
+        degree:'',
+        program:''}
+
+
+  render(){
+
+
+    const {step}=this.state
+
+    switch(step){
+      case 1:
+        return(
+        <div className="personal_details">
+            <Personal 
+                values={this.state} 
+                handleChange={this.handleChange}
+                nextStep={this.nextStep}
+                visited={this.visited}
+            />
+          </div>
+        // <h1>This is the First Page!!.</h1>
+        )
+      case 2:
+         return(
+            <Education
+            values={this.state} 
+            handleChange={this.handleChange}
+            prevStep={this.prevStep}
+            nextStep={this.nextStep}
+            />
+         )
+      case 3:
+        return(
+            <Experience
+            values={this.state} 
+            handleChange={this.handleChange}
+            prevStep={this.prevStep}
+            nextStep={this.nextStep}
+            />
+        )
+      // case 4:
+      //   return(
+      //     <Experience data={data}/>
+      //   )
+      // case 5:
+      //   return(
+      //     <Projects data={data}/>
+      //   )
+        default:
+            return(
+
+              <h1>This is a default page!!.</h1>
+            )
+        }
+    }
+
+    nextStep=()=>{
+        const {step} = this.state
+    
+        this.setState({
+          step:step+1
+        })
+    
+       }
+    
+    prevStep=()=>{
+        const {step} = this.state
+    
+        this.setState({
+          step:step-1
+        })
+        
+       }
+    
+    handleChange = ({target: {value, name}}) => {
+        this.setState ({[name]: value});
+    };
+
+    visited=()=>{
+        const {visited_page} = this.state
+
+        this.setState({
+            visited_page:visited_page+1
+        })
+    }
+
+
+}
+
+export default Resume;

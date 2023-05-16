@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.tab {
+  display: inline-block;
+  margin-top: 1cm;
+  margin-left: 80px;
+}
+
+/* Styles for defining margins from the the bottom */
+
+.bottom-one {
+  margin-top: 1cm;
+  margin-left: 40px;
+}
+
+.bottom-two {
+  margin-top: 2cm;
+  margin-left: 40px;
+}
+
+.bottom-three {
+  display: inline-block;
+  margin-top: 3cm;
+  margin-left: 40px;
+}
+
+/* Styles for defining margins from the top */
+
+.top-half {
+  display: inline-block;
+  margin-left: 40px;
+  margin-top: 0.5cm;
+}
+
+
+/* Styles for defining margins from the left */
+
+.left-three {
+  margin-top: 2cm;
+  margin-left: 25cm;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
