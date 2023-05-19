@@ -1,3 +1,4 @@
+import { Button } from "@material-ui/core";
 import React,{Component} from "react";
 
 class Personal extends Component{
@@ -20,7 +21,10 @@ class Personal extends Component{
             {/* <br></br> */}
                 <form id="Personal_details">
                     <span class="tab"></span>
+
+                    <div class="input-wrapper">
                     <label> First Name </label>
+
                     <input type="text" name="firstname" onChange={handleChange}
                     defaultValue={values.visited_page>1 ? values.firstname : ""}>
                     </input>
@@ -30,40 +34,46 @@ class Personal extends Component{
                     <input type="text" name="lastname" onChange={handleChange}
                     defaultValue={values.visited_page>1 ? values.lastname : ""}></input>
 
+                    <span class="tab"></span>
+                    <label htmlFor="city"> City </label>
+                    <input type="text" name="city" id="city" onChange={handleChange} 
+                    defaultValue={values.visited_page>1 ? values.city : ""}>
+
+                    </input>
+                    </div>
                     {/* <pre>
                     <span class="bottom-three"></span>
                     <label htmlFor="address"> Address </label>
                     <input type="text" name="address" id="address" onChange={handleChange}></input>
-                    </pre>
+                    </pre> */}
 
-                    <span class="tab"></span>
-                    <label htmlFor="City"> City </label>
-                    <input type="text" name="City" id="City" onChange={handleChange}></input>
-
-                    <pre class="bottom-one">
+                    {/* <pre class="bottom-one">
                         <span ></span>
-                        <label htmlFor="State"> State </label>
-                        <input type="text" name="State" id="State" onChange={handleChange}></input>
+                        <label htmlFor="state1"> State </label>
+                        <input type="text" name="state1" id="state1" onChange={handleChange}
+                        defaultValue={values.visited_page>1 ? values.state1 : ""}></input>
 
                         <span class="top-three"></span>
-                        <label htmlFor="Country"> Country </label>
-                        <input type="text" name="Country" id="Country" onChange={handleChange}></input>
+                        <label htmlFor="country"> Country </label>
+                        <input type="text" name="country" id="country" onChange={handleChange}
+                        defaultValue={values.visited_page>1 ? values.country : ""}></input>
 
                         <span class="top-three"></span>
                         <label htmlFor="email"> Email </label>
-                        <input type="text" name="email" id="email" onChange={handleChange}></input>
+                        <input type="text" name="email" id="email" onChange={handleChange}
+                        defaultValue={values.visited_page>1 ? values.email : ""}></input>
 
                         <span class="top-three"></span>
                         <label htmlFor="phone"> Phone </label>
-                        <input type="phone" name="phone" id="phone" onChange={handleChange}></input>
+                        <input type="phone" name="phone" id="phone" onChange={handleChange}
+                        defaultValue={values.visited_page>1 ? values.phone : ""}></input>
 
                     </pre> */}
 
                     <pre class="bottom-two">
                         <div>
-                            {/* <input type="button" value="Previous" onClick={this.prevStep} />
-                            <span class="left-three"></span> */}
-                            <input type="button" value="Next" onClick={this.nextStep} />
+                            {/* <input type="button" value="Next" onClick={this.nextStep} /> */}
+                            <Button variant="contained" onClick={this.nextStep}>Next</Button>
                         </div>
                     </pre>
                     

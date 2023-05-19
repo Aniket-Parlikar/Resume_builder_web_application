@@ -1,6 +1,9 @@
-import React,{Component} from "react"
+import React,{Component} from "react";
+import {Button} from '@material-ui/core';
 import Personal from "./Personal";
 import Education from "./Education";
+import Experience from "./Experience";
+import Skills from "./Skills"
 
 class Resume extends Component{
 
@@ -22,11 +25,13 @@ class Resume extends Component{
         email:'',
         phone:'',
         city:'',
-        state1:'',
         country:'',
         university:'',
         degree:'',
-        program:''}
+        program:'',
+        job:'',
+        employer:'',
+        duties:''}
 
 
   render(){
@@ -65,10 +70,13 @@ class Resume extends Component{
             nextStep={this.nextStep}
             />
         )
-      // case 4:
-      //   return(
-      //     <Experience data={data}/>
-      //   )
+      case 4:
+        return(
+          <Skills values={this.state}
+          handleChange={this.handleChange}
+          prevStep={this.prevStep}
+          nextStep={this.nextStep}/>
+        )
       // case 5:
       //   return(
       //     <Projects data={data}/>
